@@ -16,7 +16,10 @@ public class Configurator {
     private static final String GLASSFISH_INSTANCE_ROOT_PROPERTY = "com.sun.aas.instanceRoot";
     private static final String GLASSFISH_CONFIG_FOLDER = "config";
     private static final String GLASSFISH_TRANSACTION_MANAGER_JNDI_NAME =
-             "java:appserver/TransactionManager";
+            "java:appserver/TransactionManager";
+
+    private static final String CDI_BEAN_MANAGER_JNDI_NAME = "java:comp/BeanManager";
+
     private static final String MAIN_CFG_FILE = "main.cfg";
 
     private static volatile Map<String, ConfigSnapshot> snapshots = null;
@@ -72,5 +75,9 @@ public class Configurator {
     public static String getTransationManagerJndiName() {
         // TODO: implement another app servers implementations
         return GLASSFISH_TRANSACTION_MANAGER_JNDI_NAME;
+    }
+
+    public static String getCdiBeanManagerJndiName() {
+        return CDI_BEAN_MANAGER_JNDI_NAME;
     }
 }
